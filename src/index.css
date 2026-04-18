@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, sans-serif;
+  background: #f9f9f8;
+  color: #1a1a1a;
+}
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.header p {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 1.25rem;
+}
+.progress-bar {
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+.progress-fill {
+  height: 4px;
+  background: #7f77dd;
+  border-radius: 2px;
+  transition: width 0.4s;
+}
+.counter {
+  font-size: 12px;
+  color: #aaa;
+  text-align: right;
+  margin-bottom: 1.25rem;
+}
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.card:focus-within {
+  border-color: #7f77dd;
+}
+.q-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.q-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #eeedfe;
+  color: #3c3489;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.q-label {
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 3px;
+}
+.q-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fafafa;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+}
+.q-input:focus {
+  border-color: #7f77dd;
+  background: #fff;
+}
+.char-count {
+  text-align: right;
+  font-size: 11px;
+  color: #bbb;
+  margin-top: 4px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  background: #534ab7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.15s;
+}
+.submit-btn:hover:not(:disabled) {
+  background: #3c3489;
+}
+.submit-btn:disabled {
+  background: #e0e0e0;
+  color: #aaa;
+  cursor: not-allowed;
+}
+.error-msg {
+  text-align: center;
+  font-size: 13px;
+  color: #e24b4a;
+  margin-top: 10px;
+}
+.success-box {
+  background: #eaf3de;
+  border: 0.5px solid #97c459;
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.check-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #639922;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+.success-box h2 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #27500a;
+  margin-bottom: 6px;
+}
+.success-box p {
+  font-size: 13px;
+  color: #3b6d11;
+}
