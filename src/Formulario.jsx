@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycby2ddOVWUa5Mk4tTjBv_-Ovkq3fTXKaOgSVPDXkWk-tzDtTOXDGpK_F2Ijvand_dS7f/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbxyZ5o1pO_t-mBcARtulKNqlmqXN93ffcpEe2b5cguTIOzXMtVb7EjJE8eaAfdO-HU/exec";
 
 const preguntas = [
   { id: "color",    label: "¿Cuál es tu color favorito?" },
@@ -23,23 +23,23 @@ export default function Formulario() {
   };
 
   const handleSubmit = async () => {
-    setEstado("enviando");
-    const data = {
-      fecha: new Date().toLocaleString("es-CO"),
-      ...Object.fromEntries(preguntas.map(p => [p.id, respuestas[p.id] ?? ""])),
-    };
-    try {
-      await fetch(SHEET_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      setEstado("exito");
-    } catch {
-      setEstado("error");
-    }
+  setEstado("enviando");
+  const data = {
+    fecha: new Date().toLocaleString("es-CO"),
+    ...Object.fromEntries(preguntas.map(p => [p.id, respuestas[p.id] ?? ""])),
   };
+
+  try {
+    const params = new URLSearchParams(data).toString();
+    await fetch(`${SHEET_URL}?${params}`, {
+      method: "GET",
+      mode: "no-cors",
+    });
+    setEstado("exito");
+  } catch {
+    setEstado("error");
+  }
+};
 
   if (estado === "exito") {
     return (
